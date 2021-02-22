@@ -1,0 +1,7 @@
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\bin\Release\netstandard2.0\SimpleProfiler.deps.json
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\bin\Release\netstandard2.0\SimpleProfiler.dll
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.csprojAssemblyReference.cache
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.AssemblyInfoInputs.cache
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.AssemblyInfo.cs
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.csproj.CoreCompileInputs.cache
+E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.dll
