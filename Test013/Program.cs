@@ -25,43 +25,42 @@ namespace Test013 {
 
 
     public class ABC {
-        public int index;
-        [Test()]
+        [SimpleProfile]
         public void For100()
         {
             Console.WriteLine("For100!");
             for (int i = 0; i < 100; i++) ;
         }
 
-        [Test]
+        [SimpleProfile]
         public void For1000()
         {
             Console.WriteLine("For1000!");
             for (int i = 0; i < 1000; i++) ;
         }
 
-        [Test]
+        [SimpleProfile]
         public void For10000()
         {
             Console.WriteLine("For10000!");
             for (int i = 0; i < 10000; i++) ;
         }
 
-        [Test]
+        [SimpleProfile]
         public void For100000()
         {
             Console.WriteLine("For100000!");
             for (int i = 0; i < 100000; i++) ;
         }
 
-        [Test]
+        [SimpleProfile]
         public void For1000000()
         {
             Console.WriteLine("For1000000!");
             for (int i = 0; i < 1000000; i++) ;
         }
 
-        [Test]
+        [SimpleProfile]
         public void For10000000()
         {
             Console.WriteLine("For10000000!");

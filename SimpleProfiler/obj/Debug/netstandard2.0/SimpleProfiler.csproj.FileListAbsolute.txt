@@ -25,3 +25,12 @@ C:\Users\dlgnl\Desktop\Project\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\Si
 C:\Users\dlgnl\Desktop\Project\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.csproj.CoreCompileInputs.cache
 C:\Users\dlgnl\Desktop\Project\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.dll
 C:\Users\dlgnl\Desktop\Project\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.pdb
+E:\tjttt\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.csprojAssemblyReference.cache
+E:\tjttt\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.AssemblyInfoInputs.cache
+E:\tjttt\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.AssemblyInfo.cs
+E:\tjttt\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.csproj.CoreCompileInputs.cache
+E:\tjttt\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.dll
+E:\tjttt\tptptp\SimpleProfiler\obj\Debug\netstandard2.0\SimpleProfiler.pdb
+E:\tjttt\tptptp\SimpleProfiler\bin\Debug\netstandard2.0\SimpleProfiler.deps.json
+E:\tjttt\tptptp\SimpleProfiler\bin\Debug\netstandard2.0\SimpleProfiler.dll
+E:\tjttt\tptptp\SimpleProfiler\bin\Debug\netstandard2.0\SimpleProfiler.pdb

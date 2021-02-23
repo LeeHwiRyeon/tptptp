@@ -17,7 +17,6 @@ namespace SimpleProfiler {
         private readonly Func<ProfilingResult, string> Format;
         private readonly StringBuilder m_history = new StringBuilder();
 
-
         internal Profiler(string name, IEnumerable<Assembly> assemblies, bool runOnBuild, Func<ProfilingResult, string> format)
         {
             if (GlobalProfilingState.Instance.DoesProfilerExists(name)) {
@@ -43,7 +42,7 @@ namespace SimpleProfiler {
                           }).Select(m => {
                               //TODO make this better, don't return attributes twice
                               var attr = m.GetCustomAttributes().Where(a => a is IProfilerAttribute).FirstOrDefault();
-                              if (attr is TestAttribute) {
+                              if (attr is SimpleProfileAttribute) {
                                   return new PatchMethod(m, ProfilingPatchType.Normal);
                               }
 

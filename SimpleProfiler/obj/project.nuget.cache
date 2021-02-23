@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "mNLBZ1JamQ0AOFTOH56zu1hImXCum4vedRKBZZP2v734KshvyWJ3YgKUjDeVHzXq1Y2vnFwL5w6T+GDN4Y9MIw==",
+  "dgSpecHash": "LcuxFciEigY1plqjBcalh2I5srPpKZsqkWRSz3xypB0DW0t+219QHmThOSAWFMkq3mhkanyJNrUvtzNIEAA4HA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dlgnl\\Desktop\\Project\\tptptp\\SimpleProfiler\\SimpleProfiler.csproj",
+  "projectFilePath": "E:\\tjttt\\tptptp\\SimpleProfiler\\SimpleProfiler.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dlgnl\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512",
-    "C:\\Users\\dlgnl\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\dlgnl\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\IMC\\.nuget\\packages\\lib.harmony\\2.0.4\\lib.harmony.2.0.4.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": [
     {
