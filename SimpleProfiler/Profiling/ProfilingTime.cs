@@ -1,6 +1,6 @@
 using System.Diagnostics;
 namespace SimpleProfiler {
-    public class ProfilingTime {
+    public struct ProfilingTime {
         public long Ticks { get; private set; }
         public long Milliseconds { get; private set; }
         public int Seconds { get; private set; }

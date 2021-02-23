@@ -6,25 +6,45 @@ namespace Test013 {
     class Program {
         static void Main(string[] args)
         {
+            Console.WriteLine("Hello World!");
+
             var temp = Profiler.Create("Test");
             temp.UseAssemblies(typeof(ABC).Assembly);
             var p = temp.Build();
-            Console.WriteLine("Hello World!");
-            var abc = new ABC();
-            abc.For100();
-            abc.For1000();
-            abc.For10000();
-            abc.For100000();
-            abc.For1000000();
-            abc.For10000000();
-            abc.For1000000();
+
+            var abc = new ABC(0);
+            abc.Update();
+
+            abc = new ABC(1);
+            abc.Update();
+
             p.Print("UpdateFrameTooSlow.md");
+
             Console.ReadLine();
         }
     }
 
-
     public class ABC {
+        public string Idspace { get; set; }
+        public int handle = 0;
+        public int Handle;
+        public ABC(int i)
+        {
+            Handle = i;
+        }
+
+        [SimpleProfile()]
+        public void Update()
+        {
+            For100();
+            For1000();
+            For10000();
+            For100000();
+            For1000000();
+            For10000000();
+            For1000000();
+        }
+
         [SimpleProfile]
         public void For100()
         {

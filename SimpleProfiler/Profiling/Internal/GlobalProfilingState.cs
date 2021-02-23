@@ -3,14 +3,14 @@ using System.Linq;
 
 namespace SimpleProfiler {
     internal class GlobalProfilingState {
-        private static GlobalProfilingState _instance;
+        private static GlobalProfilingState m_instance;
         public static GlobalProfilingState Instance {
             get {
-                if (_instance == null) {
-                    _instance = new GlobalProfilingState();
+                if (m_instance == null) {
+                    m_instance = new GlobalProfilingState();
                 }
 
-                return _instance;
+                return m_instance;
             }
         }
 
