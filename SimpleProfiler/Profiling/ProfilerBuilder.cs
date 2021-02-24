@@ -12,7 +12,7 @@ namespace SimpleProfiler {
         {
             Assemblies = new List<Assembly>();
             this.name = name;
-            format = (r => $"{r.DisplayName} took {r.Time.Ticks} ticks | {r.Time.Milliseconds} ms to execute");
+            format = (r => $"* {r.DisplayName} took {r.Time.Ticks} ticks | {r.Time.Milliseconds} ms to execute");
         }
 
         public ProfilerBuilder UseAssemblies(params Assembly[] assemblies)

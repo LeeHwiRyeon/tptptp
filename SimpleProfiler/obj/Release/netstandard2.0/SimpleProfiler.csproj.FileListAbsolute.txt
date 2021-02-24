@@ -5,3 +5,10 @@ E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProf
 E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.AssemblyInfo.cs
 E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.csproj.CoreCompileInputs.cache
 E:\mtos\m3dev\Server\Shared\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.dll
+E:\tjttt\tptptp\SimpleProfiler\bin\Release\netstandard2.0\SimpleProfiler.deps.json
+E:\tjttt\tptptp\SimpleProfiler\bin\Release\netstandard2.0\SimpleProfiler.dll
+E:\tjttt\tptptp\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.csprojAssemblyReference.cache
+E:\tjttt\tptptp\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.AssemblyInfoInputs.cache
+E:\tjttt\tptptp\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.AssemblyInfo.cs
+E:\tjttt\tptptp\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.csproj.CoreCompileInputs.cache
+E:\tjttt\tptptp\SimpleProfiler\obj\Release\netstandard2.0\SimpleProfiler.dll

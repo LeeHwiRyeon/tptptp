@@ -12,8 +12,19 @@ namespace SimpleProfiler {
 
         public static void StartProfiling(out ProfilingState __state, MethodInfo __originalMethod)
         {
-            var attr = (IProfilerAttribute)__originalMethod.GetCustomAttributes().Where(a => a is IProfilerAttribute).FirstOrDefault();
-            __state = new ProfilingState(attr, "");
+            var attrs = __originalMethod.GetCustomAttributes();
+            IProfilerAttribute attr = null;
+            foreach (var ca in attrs) {
+                if (ca is IProfilerAttribute pa) {
+                    attr = pa;
+                    break;
+                }
+            }
+
+            if (attr == null)
+                __state = null;
+            else
+                __state = new ProfilingState(attr, __originalMethod.DeclaringType.FullName);
             __state.Start();
         }
 

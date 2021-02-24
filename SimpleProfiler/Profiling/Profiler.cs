@@ -1,6 +1,8 @@
 using HarmonyLib;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -31,27 +33,31 @@ namespace SimpleProfiler {
             methods = new List<PatchMethod>();
 
             if (!assemblies.Any()) {
-                m_patchMethod.AppendLine("> No assemblies specified, so no profiling can be done");
+                m_patchMethod.AppendLine("* No assemblies specified, so no profiling can be done");
             }
 
             foreach (var assembly in assemblies) {
                 methods.AddRange(assembly.GetTypes()
                           .SelectMany(t => t.GetMethods())
                           .Where(m => {
-                              var attr = (IProfilerAttribute)m.GetCustomAttributes().Where(a => a is IProfilerAttribute).FirstOrDefault();
-                              return attr != null && (attr.ProfilerName == Name || string.IsNullOrEmpty(attr.ProfilerName));
+                              foreach (var customAttr in m.GetCustomAttributes()) {
+                                  if (customAttr is IProfilerAttribute attr)
+                                      return attr != null && (attr.ProfilerName == Name || string.IsNullOrEmpty(attr.ProfilerName));
+                              }
+                              return false;
                           }).Select(m => {
                               //TODO make this better, don't return attributes twice
-                              var attr = m.GetCustomAttributes().Where(a => a is IProfilerAttribute).FirstOrDefault();
-                              if (attr is SimpleProfileAttribute) {
-                                  return new PatchMethod(m, ProfilingPatchType.Normal);
+                              foreach (var customAttr in m.GetCustomAttributes()) {
+                                  if (customAttr is SimpleProfileAttribute) {
+                                      return new PatchMethod(m, ProfilingPatchType.Normal);
+                                  }
                               }
 
                               return new PatchMethod(m, ProfilingPatchType.Async);
                           }));
             }
 
-            m_patchMethod.Append("> Found ").Append(methods.Count).Append(" profileable methods in ").Append(assemblies.Count()).AppendLine("assemblies");
+            m_patchMethod.Append("* Found ").Append(methods.Count).Append(" profileable methods in ").Append(assemblies.Count()).AppendLine("assemblies");
 
             if (runOnBuild) {
                 PatchAll();
@@ -59,7 +65,7 @@ namespace SimpleProfiler {
             }
 
             GlobalProfilingState.Instance.RegisterProfiler(this);
-            m_patchMethod.Append("> Profiler created: ").AppendLine(assemblies.ToString());
+            m_patchMethod.Append("* Profiler created: ").AppendLine(assemblies.ToString());
         }
 
         internal void AddProfilingResult(ref ProfilingResult result)
@@ -70,7 +76,7 @@ namespace SimpleProfiler {
 
         public void Start()
         {
-            m_patchMethod.AppendLine("> Starting profiling");
+            m_patchMethod.AppendLine("* Starting profiling");
 
             if (isRunning) {
                 return;
@@ -85,7 +91,7 @@ namespace SimpleProfiler {
 
         public void Stop()
         {
-            m_patchMethod.AppendLine("> Stopping profiling");
+            m_patchMethod.AppendLine("* Stopping profiling");
 
             if (!isRunning) {
                 return;
@@ -105,7 +111,7 @@ namespace SimpleProfiler {
                 var method = info.Method;
                 try {
                     var postfix = info.PatchType == ProfilingPatchType.Normal ? profilerPostfix : profilerPostfixAsync;
-                    m_patchMethod.Append("> Trying to patch ")
+                    m_patchMethod.Append("* Trying to patch ")
                                  .Append(method.Name)
                                  .Append(" with ")
                                  .Append(profilerPrefix.Name)
@@ -114,13 +120,13 @@ namespace SimpleProfiler {
                     harmony.Patch(info.Method, new HarmonyMethod(profilerPrefix), new HarmonyMethod(postfix));
                     patchedMethods++;
                 } catch (Exception e) {
-                    m_patchMethod.Append("> Failed to patch ")
+                    m_patchMethod.Append("* Failed to patch ")
                                  .Append(method.Name)
                                  .Append("Exception: ")
                                  .AppendLine(e.Message);
                 }
             }
-            m_patchMethod.Append("> Patched ")
+            m_patchMethod.Append("* Patched ")
                          .Append(patchedMethods)
                          .AppendLine(" methods");
             isPatched = true;
@@ -131,7 +137,7 @@ namespace SimpleProfiler {
         public void Print(string fullPath = null)
         {
             if (fullPath == null)
-                fullPath = $"{Directory.GetCurrentDirectory()}/{DateTime.Now.ToString("yyyyMdd_HHmmss")}_UpdateFrameTooSlow.md";
+                fullPath = $"{Directory.GetCurrentDirectory()}/{DateTime.Now:yyyyMdd_HHmmss}_UpdateFrameTooSlow.md";
             using (StreamWriter textWrite = File.CreateText(fullPath)) {
                 textWrite.WriteLine(m_history.ToString());
                 textWrite.Dispose();

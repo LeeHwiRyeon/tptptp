@@ -11,17 +11,14 @@ namespace SimpleProfiler {
         public string SourceMethodName { get; private set; }
         public string SourceFilePath { get; private set; }
         public int SourceLineNumber { get; private set; }
-        public int Depth { get; private set; }
 
-        public SimpleProfileAttribute(int depth = 0,
-                                      [CallerMemberName] string methodName = "",
+        public SimpleProfileAttribute([CallerMemberName] string methodName = "",
                                       [CallerFilePath] string filePath = "",
                                       [CallerLineNumber] int lineNumber = 0)
         {
             SourceMethodName = methodName;
             SourceFilePath = filePath;
             SourceLineNumber = lineNumber;
-            Depth = depth;
         }
     }
 }
